@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry measeage for my pyari bhen 🧸❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8ff9a, #f8fac4);
+    font-family: Arial;
+    text-align: center;
+}
+
+
+    
+   
+
+#yesBtn {
+    background-color: #28a745;
+    color: white;
+    box-shadow: 0 0 15px rgba(40,167,69,0.6);
+}
+
+#noBtn {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 0 0 15px rgba(220,53,69,0.6);
+}
+
+h1 {
+    font-size: 38px;
+    color: #333;
+}
+
+button {
+    padding: 12px 22px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: #dc3545;
+    color: white;
+    position: absolute;
+}
+
+/* Photo */
+#photoBox img {
+    width: 230px;
+    border-radius: 15px;
+    margin-top: 15px;
+    display: none;
+    animation: fade 6s ease;
+}
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Teddy */
+#teddy {
+    position: absolute;
+    bottom: 50px;
+    left: 150px;
+    width: 120px;
+    animation: walk 5s linear forwards;
+}
+
+@keyframes walk {
+    0% { left: -150px; }
+    100% { left: 40%; }
+}
+
+
+#speech {
+    position: absolute;
+    bottom: 180px;
+    left: 35%;
+    background: white;
+    
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+.maff{font-family: monospace;
+    text-align: center;
+    opacity: 80%;
+    
+}
+/* Hearts */
+.heart {
+    position: absolute;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% { top: -10%; opacity:1;}
+    100% { top: 110%; opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="maff">Maff karde yrrr 🥺🙏</h1>
+
+    <button id="yesBtn" onclick="forgive()">Yesss ❤️</button>
+    <button id="noBtn" onclick="noClick()" onmouseover="moveButton()">No 😡</button>
+
+    <div id="result">
+        
+    </div>
+
+    <!-- Photos -->
+    
+
+</div>
+
+<!-- Teddy -->
+<img id="teddy" src="C:\Users\princ\Downloads\Screenshot_20260330_221051.jpg.jpeg" height="250px" width="250px">
+<video id="myvideo" width="200"autoplay  loop muted playsinline>
+    <source src="C:\Users\princ\Downloads\WhatsApp Video 2026-03-31 at 1.50.18 AM nn.mp4">
+</video>
+
+
+<script>
+    document.addEventListener("click",function(){
+        const video =document.getElementById("myvideo");video.muted=false;
+        video.play();
+    });
+
+let count = 0;
+
+// NO click logic
+function noClick() {
+    count++;
+
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById("p"+i).style.display = "none";
+    }
+
+    if (count <= 5) {
+        document.getElementById("p"+count).style.display = "block";
+    } else {
+        document.getElementById("p5").style.display = "block";
+    }
+
+    document.getElementById("result").innerHTML =
+    "<h2>Itna gussa mat ho na 😭</h2>";
+}
+
+// YES click
+function forgive() {
+    document.getElementById("result").innerHTML =
+    "<h2>Yayyyy 😭❤️<br> wwwwwwwwwwwwwwwwwwwww</h2>";
+
+    alert(" thank you❤️");
+}
+
+// NO button escape
+function moveButton() {
+    let btn = document.getElementById("noBtn");
+
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+// Teddy talk
+setTimeout(() => {
+    document.getElementById("speech").style.display = "block";
+}, 5);
+
+// Hearts animation
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "soory bhen";
+    heart.classList.add("heart");
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}, 300);
+
+
+ 
+
+  
+
+</script>
+
+</body>
+</html>
